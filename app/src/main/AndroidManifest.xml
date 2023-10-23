@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Layouts"
         tools:targetApi="31">
         <activity
+            android:name=".a03_animation.A02_SimpsonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".a03_animation.A01_LoadingActivity"
+            android:exported="false" />
+        <activity
             android:name=".a01_layout.L03_RelativeActivity"
             android:exported="false" />
         <activity

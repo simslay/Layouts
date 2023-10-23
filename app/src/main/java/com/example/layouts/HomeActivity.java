@@ -10,6 +10,8 @@ import android.widget.Button;
 import com.example.layouts.a01_layout.L01_LinearActivity;
 import com.example.layouts.a01_layout.L02_FrameActivity;
 import com.example.layouts.a01_layout.L03_RelativeActivity;
+import com.example.layouts.a03_animation.A01_LoadingActivity;
+import com.example.layouts.a03_animation.A02_SimpsonActivity;
 
 public class HomeActivity extends AppCompatActivity {
     /** Personal */
@@ -17,12 +19,16 @@ public class HomeActivity extends AppCompatActivity {
     Button btnLinearLayout;
     Button btnFrameLayout;
     Button btnRelativeLayout;
+    Button btnAnimationLoading;
+    Button btnAnimationSimpson;
 
     // 2 Methode d'initialisation des widgets
     public void initUI() {
         btnLinearLayout = findViewById(R.id.btn_linear_layout);
         btnFrameLayout = findViewById(R.id.btn_frame_layout);
         btnRelativeLayout = findViewById(R.id.btn_relative_layout);
+        btnAnimationLoading = findViewById(R.id.btn_animation_loading);
+        btnAnimationSimpson = findViewById(R.id.btn_animation_simpson);
     }
 
     // 4 Methode pour la gestion du bouton LinearLayout
@@ -53,6 +59,24 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    private void setBtnAnimationLoading() {
+        btnAnimationLoading.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, A01_LoadingActivity.class));
+            }
+        });
+    }
+
+    private void setBtnAnimationSimpson() {
+        btnAnimationSimpson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, A02_SimpsonActivity.class));
+            }
+        });
+    }
+
     /** Life cycles */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +88,8 @@ public class HomeActivity extends AppCompatActivity {
         setBtnLinearLayout();
         setBtnFrameLayout();
         setBtnRelativeLayout();
-        // commit psuh
+        setBtnAnimationLoading();
+        setBtnAnimationSimpson();
+        // commit push
     }
 }
